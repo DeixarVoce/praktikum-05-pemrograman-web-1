@@ -1,0 +1,364 @@
+
+/* ===== 1. Reset & Box Model ===== */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* navbar, wrapper, footer vertikal */
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: #f4f6f9;
+    color: #212529;
+}
+
+/* ===== 2. Navbar ===== */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    padding: 0 1.5rem;
+    background: #1e3a5f;
+    color: #fff;
+}
+
+.brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.nav-kanan {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logout {
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 6px;
+}
+
+/* ===== 3. Badge ===== */
+.notif {
+    position: relative;
+    background: none;
+    border: 0;
+    font-size: 1.25rem;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.badge {
+    position: absolute;
+    top: -4px;
+    right: -8px;
+    min-width: 18px;
+    padding: 1px 5px;
+    font-size: 0.70rem;
+    font-weight: 700;
+    line-height: 16px;
+    color: #fff;
+    background: #dc3545;
+    border-radius: 999px;
+}
+
+
+/* ===== 4. Kerangka sidebar + konten ===== */
+
+.wrapper {
+    display: flex;
+    flex: 1;
+}
+
+/* ===== Sidebar ===== */
+
+.sidebar {
+    flex: 0 0 240px;
+    padding: 1rem;
+    background: #fff;
+    border-right: 1px solid #dee2e6;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Konten utama ===== */
+
+.konten {
+    flex: 1;
+    min-width: 0;
+    padding: 1.5rem;
+}
+
+/* ===== Menu ===== */
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.menu a {
+    padding: 10px 14px;
+    border-radius: 6px;
+    color: #495057;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    background: #e9ecef;
+}
+
+.menu a.aktif {
+    background: #1e3a5f;
+    color: #fff;
+}
+
+
+/* ===== 5. Konten ===== */
+
+.konten h1 {
+    margin-top: 0;
+}
+
+.statistik {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.kartu {
+    flex: 1 1 200px;
+    padding: 1rem 1.25rem;
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+}
+
+.kartu h2 {
+    margin: 0 0 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #6c757d;
+}
+
+.angka {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.panel {
+    padding: 1.25rem;
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+}
+
+/* ===== 6. Footer ===== */
+
+.footer {
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #6c757d;
+    background: #fff;
+    border-top: 1px solid #dee2e6;
+}
+
+
+/* ===== 7. Layar <= 768px ===== */
+
+@media (max-width: 768px) {
+
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        flex-basis: auto; /* basis kini berlaku untuk tinggi */
+        border-right: 0;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    .menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+}
+
+
+/* ===== Tugas Mandiri 1: Profil Pengguna ===== */
+
+.profil {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: #1e3a5f;
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.nama-admin {
+    color: #fff;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Tugas Mandiri 2: Menu Pengaturan */
+
+.pengaturan {
+    display: block;
+    margin-top: auto;
+    padding: 10px 14px;
+    border-radius: 6px;
+    color: #495057;
+    text-decoration: none;
+}
+
+.pengaturan:hover {
+    background: #e9ecef;
+}
+
+/* Tugas Mandiri 3: Label Baru */
+
+.kartu-baru {
+    position: relative;
+}
+
+.label-baru {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 4px 8px;
+    background: #dc3545;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: 999px;
+}
+
+
+/* Tugas Mandiri 4: Tabel Jadwal */
+
+.jadwal-scroll {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.jadwal-scroll table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.jadwal-scroll th,
+.jadwal-scroll td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.jadwal-scroll thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #1e3a5f;
+    color: #fff;
+}
+
+/* Perapian Navbar pada Mobile */
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 0 0.75rem;
+    }
+
+    .brand {
+        font-size: 1rem;
+        white-space: nowrap;
+    }
+
+    .nav-kanan {
+        gap: 0.35rem;
+    }
+
+    .notif {
+        font-size: 1.1rem;
+        padding: 2px;
+    }
+
+    .profil {
+        gap: 4px;
+    }
+
+    .nama-admin {
+        font-size: 0.75rem;
+    }
+
+    .logout {
+        padding: 6px 8px;
+        font-size: 0.8rem;
+    }
+
+}
+
+
+/* Perbaikan tabel jadwal pada layar mobile */
+
+@media (max-width: 768px) {
+
+    .jadwal-scroll table {
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    .jadwal-scroll th,
+    .jadwal-scroll td {
+        padding: 8px 4px;
+        font-size: 0.75rem;
+        overflow-wrap: anywhere;
+    }
+
+    .jadwal-scroll th:nth-child(1),
+    .jadwal-scroll td:nth-child(1) {
+        width: 17%;
+    }
+
+    .jadwal-scroll th:nth-child(2),
+    .jadwal-scroll td:nth-child(2) {
+        width: 23%;
+    }
+
+    .jadwal-scroll th:nth-child(3),
+    .jadwal-scroll td:nth-child(3) {
+        width: 38%;
+    }
+
+    .jadwal-scroll th:nth-child(4),
+    .jadwal-scroll td:nth-child(4) {
+        width: 22%;
+    }
+}
+
